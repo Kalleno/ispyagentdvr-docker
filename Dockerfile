@@ -81,7 +81,9 @@ EXPOSE 3478/udp
 EXPOSE 50000-50010/udp
 
 # Data volumes
-VOLUME ["/agent/Media/XML", "/agent/Media/WebServerRoot/Media"]
+# VOLUME ["/agent/Media/XML", "/agent/Media/WebServerRoot/Media"]
+VOLUME /config
+VOLUME /media
 
 # Define service entrypoint
 CMD ["dotnet", "/agent/Agent.dll"]
